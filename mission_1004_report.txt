@@ -1,0 +1,28 @@
+Mission 10/4 – Terraform & Docker Bridge (Local Mode)
+EN
+- Done:
+  • Terraform initialized with Docker provider.
+  • Applied Nginx container (80→8080); verified HTTP 200 via curl and browser.
+  • Added Redis container; verified with `redis-cli PING` → PONG.
+  • Cleaned up with `terraform destroy`.
+- Why Docker (not AWS) today:
+  • No credentials or cost risk; perfect for learning the Terraform workflow (init→plan→apply→destroy).
+  • AWS path needs IAM keys and can incur costs; we’ll switch later for job-ready cloud practice.
+- Lessons:
+  • Provider typos matter (`kreuzwerker/docker` not `hashicorp/doker`).
+  • Use `docker_image.*.image_id` (not `.latest`) for container’s image.
+  • “You didn’t use -out” is a reminder, not an error.
+
+ZH
+- 完成事項：
+  • 使用 Docker provider 初始化 Terraform。
+  • 建立 Nginx（80→8080）並以 curl/瀏覽器驗證 200。
+  • 建立 Redis 並以 `redis-cli PING` 驗證 PONG。
+  • 以 `terraform destroy` 清理資源。
+- 為何今天選 Docker 而非 AWS：
+  • 本機零成本、免憑證風險；專注熟悉 Terraform 流程。
+  • AWS 需要 IAM 金鑰且可能產生成本；之後再切換以累積雲端實戰。
+- 收穫：
+  • Provider 名稱拼寫要正確（`kreuzwerker/docker`）。
+  • 容器 image 請用 `image_id` 參照，不是 `.latest`。
+  • 關於 `-out` 的訊息是提醒而非錯誤。
